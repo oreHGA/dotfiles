@@ -25,9 +25,10 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kaicataldo/material.vim'
-Plugin 'tyrannicaltoucan/vim-quantum',
+Plugin 'tyrannicaltoucan/vim-quantum'
 Plugin 'Jimeno0/vim-chito'
-
+Plugin 'haishanh/night-owl.vim'
+"
 "Bundle 'Valloric/YouCompleteMe'
 
 " add all your plugins here (note older versions of Vundle
@@ -104,12 +105,21 @@ set t_Co=256
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
-if has("gui_running")
-    set background=dark
-    colorscheme material
-else
-    colorscheme onedark
+if(has('termguicolors'))
+    set termguicolors
 endif
+
+"" enable theme
+syntax enable
+colorscheme night-owl
+
+"""
+"if has("gui_running")
+"    set background=dark
+"    colorscheme material
+"else
+"    colorscheme onedark
+"endif
 
 " To enable color switching
 call togglebg#map("<F5>")
